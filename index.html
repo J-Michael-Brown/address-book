@@ -8,7 +8,7 @@
   </head>
   <body>
     <div class="">
-      <form>
+      <form id="contact-info">
         <label for="First-Name">Your First Name</label>
         <input type="text" id="First-Name" value="">
         <label for="Last-Name">Your Last Name</label>
@@ -16,6 +16,22 @@
         <label for="Phone-Number">Phone Number</label>
         <input type="number" id="Phone-Number" value="">
         <button type="submit" name="submit-button"></button>
+      </form>
+
+      <form id="finder-with-id">
+        <label for="contact-finder">Enter your ID</label>
+        <input type="number" id="contact-finder">
+        <button type="submit" name="id-button"></button>
+      </form>
+
+      <div class="user-info-export">
+        <p id="info-array"></p>
+      </div>
+
+      <form id="deleter-with-id">
+        <label for="contact-finder">Enter your ID to destroy the contact</label>
+        <input type="number" id="contact-deleter">
+        <button type="submit" name="id-button"></button>
       </form>
     </div>
     <div class="Book">

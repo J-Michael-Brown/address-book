@@ -54,15 +54,29 @@ Contact.prototype.update = function () {
 
 
 
+var addressBook = new AddressBook();
 
 $(document).ready(function() {
-  $("form").submit(function(event) {
+  $("form#contact-info").submit(function(event) {
     event.preventDefault();
 
     var inputContact = new Contact($("#First-Name").val(), $("#Last-Name").val(), $("#Phone-Number").val());
 
-
-    console.log(inputContact);
-
+    addressBook.addContact(inputContact);
+    console.log(addressBook);
   });
+
+  $("form#finder-with-id").submit(function(event) {
+    event.preventDefault();
+    var contactInfo = addressBook.findContact($("#contact-finder").val());
+    $("#info-array").text("Name: " + contactInfo.firstName + " " + contactInfo.lastName + " Phone #: " + contactInfo.phoneNumber + " ID: " + contactInfo.id);
+    console.log(addressBook.findContact($("#contact-finder").val()));
+  });
+
+  $("form#deleter-with-id").submit(function(event) {
+    event.preventDefault();
+    console.log(addressBook.deleteContact($("#contact-deleter").val()));
+  });
+
+
 });
